@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 #Angular
-ManguitoApp\src\test.ts
-ManguitoApp\package-lock.json
-ManguitoApp\package.json
-ManguitoApp\tsconfig.json
+ManguitoApp/src/test.ts
+ManguitoApp/package-lock.json
+ManguitoApp/package.json
+ManguitoApp/tsconfig.json
