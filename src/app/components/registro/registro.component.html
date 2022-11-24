@@ -3,7 +3,7 @@
       <div class="row d-flex justify-content-center align-items-center fondoFlores py-5" >
         <div class="col-md-8 col-lg-6 col-xl-4 shadow-lg p-5 my-5 bg-white rounded"> 
           <h2 style="text-align: center;">Registrarse</h2>
-          <form >
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
 
             <!-- Email input -->
             <div class="form-group form-outline mb-4">

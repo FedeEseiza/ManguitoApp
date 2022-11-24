@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent {
 
-  constructor() { }
+  constructor(private userService: UsuarioService, private router: Router) { }
 
-  ngOnInit(): void {
+  onSubmit(data: string){
+    this.userService.registrar(data)
+    .subscribe(
+      () => {
+
+        this.router.navigate(["login"])
+      },
+      error => {
+        if (error.status == 409){
+          alert("El email ya existe");
+        }
+      });
   }
-
 }

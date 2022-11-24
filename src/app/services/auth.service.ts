@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { Auth } from '../models/auth/Auth';
+import { Auth } from '../models/auth/auth';
 
 @Injectable({
   providedIn: 'root'
