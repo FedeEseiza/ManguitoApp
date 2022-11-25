@@ -1,21 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" routerLink="registro">Registro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login">Login</a>
+        <ul class="navbar-nav" *ngIf="authService.existeToken(); else elseBlock">
+          <li class="nav-item" >
+            <a class="nav-link" href="#">Publicar Emprendimiento</a>
           </li>
         </ul>
+        <ul class="navbar-nav align-items-center" *ngIf="authService.existeToken()">
+          <li class="nav-item d-flex">
+              <a routerLink="perfil" class="nav-link">
+                  <b>¡Hola {{authService.obtenerEmailUsuario()}}! </b>
+                  <i class="bi bi-person-lines-fill"></i>
+              </a>
+          </li>
+          <li class="nav-item"><a id="logut" style="cursor:pointer;" class="nav-link" (click)="logout()">Cerrar sesión</a></li>
+      </ul >
+      <ng-template #elseBlock>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="home">ManguitApp</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item "><a class="nav-link" routerLink="login">Iniciar Sesión</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="registro">Registrarse</a></li>
+        </ul>
+      </ng-template>
       </div>
     </div>
   </nav>
