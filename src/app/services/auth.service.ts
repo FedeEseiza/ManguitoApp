@@ -27,7 +27,7 @@ export class AuthService {
         window.localStorage.setItem("id_usuario", data.user_id);
         window.localStorage.setItem("email", data.email);
         window.localStorage.setItem("token", data.token);
-        this.router.navigate(["dashboard"])
+        this.router.navigate(["home"])
       });
   }
 

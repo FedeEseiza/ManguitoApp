@@ -9,6 +9,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenizerService } from './services/tokenizer.service';
+import { LoginComponent } from './components/login/login/login.component';
+import { HomeComponent } from './components/home/home/home.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { TokenizerService } from './services/tokenizer.service';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
