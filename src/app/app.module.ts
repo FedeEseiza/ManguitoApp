@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenizerService } from './services/tokenizer.service';
 import { LoginComponent } from './components/login/login/login.component';
 import { HomeComponent } from './components/home/home/home.component';
+import { TodosEmprendimientosComponent } from './components/emprendimiento/todos-emprendimientos-/todos-emprendimientos/todos-emprendimientos.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home/home.component';
     FooterComponent,
     RegistroComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    TodosEmprendimientosComponent,
   ],
   imports: [
     BrowserModule,
