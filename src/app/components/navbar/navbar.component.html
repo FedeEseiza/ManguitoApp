@@ -5,8 +5,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav" *ngIf="authService.existeToken(); else elseBlock">
-          <li class="nav-item" >
-            <a class="nav-link" href="#">Publicar Emprendimiento</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="nuevo-emprendimiento">Publicar Emprendimiento</a>
           </li>
         </ul>
         <ul class="navbar-nav align-items-center" *ngIf="authService.existeToken()">

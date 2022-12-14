@@ -15,8 +15,8 @@ export class TodosEmprendimientosComponent implements OnInit {
   constructor(public authService:AuthService, private empService:EmprendimientoService){}
 
   ngOnInit():void{
-    this.obtenerEmprendimientos
-    console.log(this.listEmprendimeintos)
+    this.obtenerEmprendimientos()
+    console.log(this.obtenerEmprendimientos())
     
   }
 

@@ -12,6 +12,7 @@ import { TokenizerService } from './services/tokenizer.service';
 import { LoginComponent } from './components/login/login/login.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { TodosEmprendimientosComponent } from './components/emprendimiento/todos-emprendimientos-/todos-emprendimientos/todos-emprendimientos.component';
+import { NuevoEmprendimientoComponent } from './components/emprendimiento/nuevo-emprendimiento/nuevo-emprendimiento/nuevo-emprendimiento.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { TodosEmprendimientosComponent } from './components/emprendimiento/todos
     LoginComponent,
     HomeComponent,
     TodosEmprendimientosComponent,
+    NuevoEmprendimientoComponent,
   ],
   imports: [
     BrowserModule,

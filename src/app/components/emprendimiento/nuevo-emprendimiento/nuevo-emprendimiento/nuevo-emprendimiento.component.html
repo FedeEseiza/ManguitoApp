@@ -1,0 +1,88 @@
+<section>
+  <div class="container-fluid ">
+    <div class="fondoFlores row d-flex justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center shadow-lg p-5 my-5 bg-white rounded">
+        <h3 class="nuevoServ">Nuevo Emprendimiento</h3>
+        <!-- <form class="form-card "  ngNativeValidate (ngSubmit)="onSubmit()" [formGroup]=""> -->
+        <form class="form-card">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Nombre del emprendimiento<span class="text-danger">
+                  *</span></label>
+              <input formControlName="nombre" type="text" id="fname" name="fname" placeholder="" required>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Categorias<span class="text-danger"> *</span></label>
+              <select required formControlName="categoria" class="form-select" aria-label="Default select example">
+                <option>ONG</option>
+                <option>Arte</option>
+                <!--                           <option *ngFor="let tipo of tiposervicios" [ngValue]="tipo.id" >{{tipo.nombre}}</option> -->
+              </select>
+            </div>
+          </div>
+          <div class="form-group col-12 flex-column d-flex">
+            <label class="form-control-label px-3 descrip">Descripción<span class="text-danger"> *</span></label>
+            <textarea required formControlName="descripcion" maxlength="255"
+              placeholder="Ingrese una descripcion de su emprendimiento" required></textarea>
+          </div>
+          <label class="form-control-label px-3">Mostrar manguitos recibidos<span class="text-danger"></span></label>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Si
+            </label>
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>
+          <label class="form-control-label px-3">Mostrar top donadores<span class="text-danger"></span></label>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Si
+            </label>
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3">Precio por manguito<span class="text-danger">
+                *</span></label>
+            <input formControlName="precio" type="text" id="precioManguito" name="precioManguito" placeholder="" required>
+          </div>
+          <label for="imagenes" class="form-control-label px-3">Imagen<span class="text-danger"> *</span></label>
+          <div>
+            <div class="form-group col-12 flex-column d-flex"> <label
+                class="form-control-label contacto">Contacto</label>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Instagram<span class="text-danger"></span></label>
+                  <input formControlName="instagram" type="text" id="ig" name="ig"
+                    placeholder="Ingrese el nombre de su cuenta">
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Twitter<span class="text-danger"></span></label>
+                  <input formControlName="twitter" type="text" id="tw" name="tw"
+                    placeholder="Ingrese el nombre de su cuenta">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="botonOk">
+            <div class="form-group col-sm-6"> <button id="boton" type="submit"
+                class="btn-block btn-primary but ">Confirmar</button> </div>
+            <div class="form-group col-sm-6"> <button id="boton" type="submit"
+                class="btn-block btn-primary but">Cancelar</button> </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
