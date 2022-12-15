@@ -16,4 +16,9 @@ export class EmprendimientoService {
     let url = environment.apiJava + this.endpoint;
     return this.http.get<Array<Emprendimiento>>(url);
   }
+
+  public nuevoEmprendimiento(emp: Emprendimiento): Observable<any>{
+    let url = environment.apiJava + 'emprendimiento'
+    return this.http.post(url, emp)
+  }
 }
