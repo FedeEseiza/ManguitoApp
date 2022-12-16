@@ -34,10 +34,10 @@
             <label for="">Mostrar manguitos recibidos</label>
             <div class="inline-block">
               <label class="" for=""> Si
-                <input type="radio" name="mostrarManguitosRecibidos" value="0" checked>
+                <input type="radio" name="mostrarManguitosRecibidos" [value]="true" formControlName="mostrarManguitosRecibidos"checked>
               </label>
               <label for=""> No
-                <input type="radio" name="mostrarManguitosRecibidos" value="1">
+                <input type="radio" name="mostrarManguitosRecibidos" [value]="false" formControlName="mostrarManguitosRecibidos">
               </label>
             </div>  
           </div>
@@ -45,10 +45,10 @@
             <label for="">Top donadores</label>
             <div class="inline-block">
               <label class="" for=""> Si
-                <input type="radio" name="mostrarTopDonadores" value="0" checked>
+                <input type="radio" name="mostrarTopDonadores" [value]="true" formControlName="mostrarTopDonadores" checked>
               </label>
               <label for=""> No
-                <input type="radio" name="mostrarTopDonadores" value="1">
+                <input type="radio" name="mostrarTopDonadores" [value]="false" formControlName="mostrarTopDonadores">
               </label>
             </div>      
           </div>

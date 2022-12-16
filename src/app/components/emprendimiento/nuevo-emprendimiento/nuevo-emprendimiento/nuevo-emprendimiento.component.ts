@@ -14,13 +14,14 @@ import Swal from 'sweetalert2';
 export class NuevoEmprendimientoComponent implements OnInit{
   emprendimiento: any;
   categorias: any
-
+  myRadio = "0";
+  checked = true
   ngOnInit() {
     this.categorias = ["ONG", "Arte"]
     this.emprendimiento = new FormGroup({
       nombre: new FormControl('', [Validators.required]),
       descripcion: new FormControl('', [Validators.required]),
-      mostrarManguitosRecibidos: new FormControl(''),
+      mostrarManguitosRecibidos: new FormControl('', [Validators.required]),
       mostrarTopDonadores: new FormControl(''),
       precioPorManguito: new FormControl('', [Validators.required]),
     });
