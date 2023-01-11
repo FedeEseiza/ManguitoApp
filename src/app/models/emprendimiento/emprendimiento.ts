@@ -8,6 +8,9 @@ export class Emprendimiento{
     mostrarTopDonadores: boolean
     mostrarManguitosRecibidos: boolean
     precioPorManguito: number
+    twitter: string
+    instagram: string
+    facebook: string
 
     constructor(id: number,
         id_usuario: number,
@@ -17,7 +20,10 @@ export class Emprendimiento{
         descripcion: string,
         mostrarTopDonadores: boolean,
         mostrarManguitosRecibidos: boolean,
-        precioPorManguito: number){
+        precioPorManguito: number,
+        twitter: string,
+        instagram: string,
+        facebook: string){
             this.id = id
             this.id_usuario = id
             this.categorias = categorias
@@ -27,6 +33,9 @@ export class Emprendimiento{
             this.mostrarTopDonadores = mostrarTopDonadores
             this.mostrarManguitosRecibidos = mostrarManguitosRecibidos
             this.precioPorManguito = precioPorManguito
+            this.twitter = twitter
+            this.instagram = instagram
+            this.facebook = facebook
         }
 
 }

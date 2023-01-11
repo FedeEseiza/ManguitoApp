@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment'
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { Categoria } from '../models/admin/categorias/categoria';
+
+
+@Injectable({
+    providedIn: 'root'
+})
+
+export class CategoriaService{
+    endpoint: string = 'categoria/'
+    constructor(private http: HttpClient, private authService:AuthService) { }
+
+    public getCategorias(){
+        let url = environment.apiJava + this.endpoint + 'categorias';
+        return this.http.get<Array<Categoria>>(url);
+    }
+
+    public nuevaCategoria(cat:Categoria):Observable<any>{
+        let url = environment.apiJava + this.endpoint + 'nueva-categoria';
+        return this.http.post(url,cat);
+    }
+
+    public editarCategoria(cat:Categoria):Observable<any>{
+        let url = environment.apiJava + this.endpoint + `/${cat.id}`;
+        return this.http.put(url,cat);
+    }
+}

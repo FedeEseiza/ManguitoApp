@@ -18,12 +18,12 @@ export class UsuarioService {
   }
 
   public getDatos(): Observable<Usuario>{
-    let url = environment.apiJava + this.endpoint + "/" + this.authService.obtenerIdUsuario();
+    let url = environment.apiJava + "usuarios/" + this.authService.obtenerIdUsuario();
     return this.http.get<Usuario>(url);
   }
 
   public editarDatos(data: any): Observable<Usuario>{
-    let url = environment.apiJava + this.endpoint + "/" + this.authService.obtenerIdUsuario();
+    let url = environment.apiJava + 'usuarios/' + this.authService.obtenerEmailUsuario();
     return this.http.put<Usuario>(url, data);
   }
 }

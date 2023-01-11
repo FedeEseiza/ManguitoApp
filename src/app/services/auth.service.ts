@@ -27,6 +27,7 @@ export class AuthService {
         window.localStorage.setItem("id_usuario", data.user_id);
         window.localStorage.setItem("email", data.email);
         window.localStorage.setItem("token", data.token);
+        window.localStorage.setItem("rol",data.rol);
         this.router.navigate(["home"])
       });
   }
@@ -50,5 +51,9 @@ export class AuthService {
 
   public existeToken(){
     return this.obtenerToken() != null
+  }
+
+  public obtenerRol(){
+    return window.localStorage.getItem("rol");
   }
 }

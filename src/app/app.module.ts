@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login/login.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { TodosEmprendimientosComponent } from './components/emprendimiento/todos-emprendimientos-/todos-emprendimientos/todos-emprendimientos.component';
 import { NuevoEmprendimientoComponent } from './components/emprendimiento/nuevo-emprendimiento/nuevo-emprendimiento/nuevo-emprendimiento.component';
+import { PerfilUsuarioComponent } from './components/perfil/perfil-usuario/perfil-usuario.component';
+import { AdministrarCategoriasComponent } from './components/admin/administrar-categorias/administrar-categorias.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { NuevoEmprendimientoComponent } from './components/emprendimiento/nuevo-
     HomeComponent,
     TodosEmprendimientosComponent,
     NuevoEmprendimientoComponent,
+    PerfilUsuarioComponent,
+    AdministrarCategoriasComponent,
   ],
   imports: [
     BrowserModule,

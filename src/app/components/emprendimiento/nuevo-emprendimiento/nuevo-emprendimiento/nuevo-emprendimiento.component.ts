@@ -24,6 +24,9 @@ export class NuevoEmprendimientoComponent implements OnInit{
       mostrarManguitosRecibidos: new FormControl('', [Validators.required]),
       mostrarTopDonadores: new FormControl(''),
       precioPorManguito: new FormControl('', [Validators.required]),
+      twitter: new FormControl(''),
+      instagram: new FormControl(''),
+      facebook: new FormControl('')
     });
   }
 

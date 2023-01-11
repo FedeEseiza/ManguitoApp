@@ -25,4 +25,16 @@ export class TodosEmprendimientosComponent implements OnInit {
       this.listEmprendimeintos = res  
     })
   }
+
+  tieneEmprendimiento(id:string){
+    var aux = false;
+    this.obtenerEmprendimientos();
+    
+    this.listEmprendimeintos.forEach(element => {
+      if (element.id_usuario == parseInt(id)){
+        aux = true;
+      }
+    });
+    return aux;
+  }
 }
