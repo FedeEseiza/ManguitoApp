@@ -1,5 +1,5 @@
-<table class="table">
-  <thead>
+<table class="table table-bordered">
+  <thead class="table-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
@@ -11,8 +11,8 @@
       <th scope="row">{{item.id}}</th>
       <td>{{item.nombre}}</td>
       <td>
-        <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal-2">Editar</button>
-        <button class="btn btn-primary m-2">Eliminar</button>
+        <button class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#exampleModal-2" (click)="setearActual(item)">Editar</button>
+        <button class="btn btn-danger m-2">Eliminar</button>
       </td>
     </tr>
   </tbody>
@@ -35,7 +35,7 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example1">Nombre de la categoria</label>
-                <input formControlName="nombre" type="text" id="form6Example1" class="form-control" />
+                <input formControlName="nombre" type="text" id="form6Example1" class="form-control" [(ngModel)]="actual.nombre"/> 
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example1">Nombre de la categoria</label>
-                <input formControlName="nombre" type="text" id="form6Example2" class="form-control" placeholder="hola"/>
+                <input formControlName="nombre" type="text" id="form6Example2" class="form-control" placeholder=""/>
               </div>
             </div>
           </div>

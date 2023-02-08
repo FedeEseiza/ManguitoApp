@@ -29,6 +29,11 @@ export class AuthService {
         window.localStorage.setItem("token", data.token);
         window.localStorage.setItem("rol",data.rol);
         this.router.navigate(["home"])
+      },
+      error => {
+        if (error.status != 200){
+          alert("El email o contraseña son incorrectos");
+        }
       });
   }
 

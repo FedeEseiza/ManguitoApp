@@ -3,6 +3,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Usuario } from 'src/app/models/usuario/usuario';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class PerfilUsuarioComponent implements OnInit{
   usuario: any
+  perfilActual: Usuario = { id: 999999, email:"", password:""}
   constructor(private usuarioService: UsuarioService, private router: Router){}
 
   ngOnInit(): void {

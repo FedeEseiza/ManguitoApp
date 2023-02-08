@@ -3,3 +3,31 @@
     align-items: center;
     justify-content: center;
 }
+
+.btn-primary
+{
+    background-color: #3CE792 !important;
+    border-color: #3CE792 !important;;
+}
+
+.btn-primary:hover
+{
+    background-color: white !important;
+    color: black !important;
+}
+
+.btn-warning{
+    color: white !important;
+}
+
+.btn-warning:hover
+{
+    background-color: white !important;
+    color: black !important;
+}
+
+.btn-danger:hover{
+    background-color: white !important;
+    color: black !important;
+}
+

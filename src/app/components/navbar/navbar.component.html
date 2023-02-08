@@ -6,22 +6,18 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="home">ManguitApp</a>
+            <a class="nav-link active" aria-current="page" routerLink="home">ManguitoApp</a>
           </li>
         </ul>
         <ul class="navbar-nav" *ngIf="authService.existeToken(); else elseBlock">
           <li class="nav-item">
             <a class="nav-link" routerLink="nuevo-emprendimiento">Publicar Emprendimiento</a>
           </li>
-          <li class="nav-item dropdown" *ngIf="authService.obtenerRol() == 'admin' ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Consola admin</a>
-            <ul class="dropdown-menu">
-              <a class="dropdown-item" routerLink="administrar-categorias">Administrar categorias</a>
-            </ul>
-        
+          <li class="nav-item" *ngIf="authService.obtenerRol() == 'admin' ">
+            <a class="nav-link" routerLink="administrar-categorias">Administrar categorias</a>    
           </li>
         </ul>
-        <ul class="navbar-nav align-items-center" *ngIf="authService.existeToken()">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0" *ngIf="authService.existeToken()">
           <li class="nav-item d-flex">
               <a routerLink="perfil" class="nav-link">
                   <b>¡Hola {{authService.obtenerEmailUsuario()}}! </b>

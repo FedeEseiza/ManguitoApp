@@ -1,3 +1,13 @@
-#logut:hover{
-    color: #E74C3C ;
+.navbar
+{
+    background-color: #3CE792 !important;
+    border-radius: 20rem !important;
+}
+
+li a{
+    color: white !important;
+}
+
+li a:hover{
+    color: black !important;
 }

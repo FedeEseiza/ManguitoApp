@@ -25,7 +25,7 @@ export class CategoriaService{
     }
 
     public editarCategoria(cat:Categoria):Observable<any>{
-        let url = environment.apiJava + this.endpoint + `/${cat.id}`;
+        let url = environment.apiJava + "categoria" + `/${cat.id}`;
         return this.http.put(url,cat);
     }
 }

@@ -15,7 +15,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AdministrarCategoriasComponent {
   public listCategorias: Array<Categoria> = [];
   categoria: any;
-  id= window.location.pathname.split("/").pop()
+  id= window.location.pathname.split("/").pop();
+  actual : Categoria = {id: 9999999, nombre: "Example"} ;
 
   constructor(public authService: AuthService, private catService: CategoriaService, private router: Router) { }
 
@@ -74,10 +75,11 @@ export class AdministrarCategoriasComponent {
             'success'
           )
           this.router.navigate(["administrar-categorias"]);
-
+          this.obtenerCategorias()
         });
       }
     })
+    
   }
 
 
@@ -92,12 +94,13 @@ export class AdministrarCategoriasComponent {
 
   onSubmitEdit() {
     var datos = this.categoria.value
-    datos["id"] = this.id
-    datos["usuario"] = {
-      id: this.authService.obtenerIdUsuario()
-    }
+    datos["id"] = this.actual.id
     this.confirmTestEdit(datos)
     console.log(datos)
+  }
+
+  setearActual(item:Categoria){
+    this.actual = item;
   }
 
 }

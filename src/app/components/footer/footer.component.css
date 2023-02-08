@@ -1,0 +1,25 @@
+#footer{
+    margin-top: 40rem !important;
+    background-color: #3CE792 !important;
+}
+
+h5{
+    color: white !important;
+}
+
+p{
+    color: white !important;
+}
+
+a{
+    color: white !important;
+}
+
+a:hover{
+    color: black !important;
+}
+
+i{
+    height: 3rem !important;
+    width: 3rem !important;
+}
