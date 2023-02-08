@@ -3,8 +3,12 @@
       <div class="row d-flex justify-content-center align-items-center fondoFlores py-5" >
         <div class="col-md-8 col-lg-6 col-xl-4 shadow-lg p-5 my-5 bg-white rounded"> 
           <h2 style="text-align: center;"> Mis datos</h2>
-          <form ngNativeValidate (ngSubmit)="onSubmit()" [formGroup]="usuario">
+          <form ngNativeValidate (ngSubmit)="onSubmitEdit()" [formGroup]="usuario">
 
+            <div class="form-group form-outline mb-4">
+              <label class="form-label" for="id"></label>
+              <input type="text" formControlName="id" [attr.disabled]="true" id="id" class="form-control form-control-lg" hidden/>
+            </div>
             <!-- Email input -->
             <div class="form-group form-outline mb-4">
                 <label class="form-label" for="email">Email</label>
@@ -17,6 +21,8 @@
                 <input name="password"  formControlName="password" type="password" id="password" class="form-control form-control-lg"
                   placeholder="Ingrese su contraseña" />
             </div>
+            
+            
 
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"

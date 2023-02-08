@@ -50,6 +50,7 @@ export class AdministrarCategoriasComponent {
             'Tu categoria ha sido creada.',
             'success'
           )
+          this.obtenerCategorias();
           this.router.navigate(["administrar-categorias"]);
 
         });
@@ -102,5 +103,4 @@ export class AdministrarCategoriasComponent {
   setearActual(item:Categoria){
     this.actual = item;
   }
-
 }

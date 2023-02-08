@@ -18,28 +18,42 @@ export class PerfilUsuarioComponent implements OnInit{
 
   ngOnInit(): void {
     this.usuario = new FormGroup({
+      id: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])    
     })
     this.usuarioService.getDatos().subscribe(data => {
       this.usuario.patchValue(data)
     })
   }
 
-  onSubmit() {
-    this.usuarioService.editarDatos(this.usuario.value).subscribe(
-      () => {
-        this.successUpdate();
-        this.router.navigate(["home"])
-      }
-    )
+  onSubmitEdit() {
+    var datos = this.usuario.value
+    this.confirmTestEdit(datos)
+    console.log(datos)
   }
 
-  successUpdate(){
-    Swal.fire(
-      'Actualizado!',
-      'Usuario editado correctamente',
-      'success'
-    )
+  confirmTestEdit(datos: any) {
+    Swal.fire({
+      title: '¿Está seguro que desea modificar su contraseña?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Crear',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: false
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(datos)
+        this.usuarioService.editarDatos(datos).subscribe(() => {
+          Swal.fire(
+            '¡Listo!',
+            'Tu usuario ha sido editado.',
+            'success'
+          )
+          this.router.navigate(["Home"]);
+        });
+      }
+    })
+    
   }
 }

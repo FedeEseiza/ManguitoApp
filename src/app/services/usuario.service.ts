@@ -22,8 +22,8 @@ export class UsuarioService {
     return this.http.get<Usuario>(url);
   }
 
-  public editarDatos(data: any): Observable<Usuario>{
-    let url = environment.apiJava + 'usuarios/' + this.authService.obtenerEmailUsuario();
+  public editarDatos(data: Usuario): Observable<any>{
+    let url = environment.apiJava + 'usuarios' + `/${data.id}`;
     return this.http.put<Usuario>(url, data);
   }
 }
