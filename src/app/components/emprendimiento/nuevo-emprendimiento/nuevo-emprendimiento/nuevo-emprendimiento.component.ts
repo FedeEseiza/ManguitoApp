@@ -49,6 +49,7 @@ export class NuevoEmprendimientoComponent implements OnInit{
             'Tu emprendimiento ha sido creado.',
             'success'
           )
+          window.localStorage.setItem("emp",datos);
           this.router.navigate(["home"]);
 
           });

@@ -4,12 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { Auth } from '../models/auth/auth';
+import { Observable } from 'rxjs';
+import { Emprendimiento } from '../models/emprendimiento/emprendimiento';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   endpoint: string = 'login'
+  aux: any
 
   simpleAlert(){
     Swal.fire({
@@ -28,6 +31,11 @@ export class AuthService {
         window.localStorage.setItem("email", data.email);
         window.localStorage.setItem("token", data.token);
         window.localStorage.setItem("rol",data.rol);
+        this.aux = this.obtenerEmprendimientoById(data.user_id).subscribe(res =>{});
+        console.log("ACAAAAAAAAAAA " +this.aux);
+        console.log(data);
+        // this.obtenerEmprendimientoById(data.user_id).subscribe(res => {window.localStorage.setItem("emp",res)});
+        console.log("En Auth service " + window.localStorage.getItem("emp"))
         this.router.navigate(["home"])
       },
       error => {
@@ -60,5 +68,11 @@ export class AuthService {
 
   public obtenerRol(){
     return window.localStorage.getItem("rol");
+  }
+
+  public obtenerEmprendimientoById(emp_id:string){
+    let url = environment.apiJava + 'emprendimiento' + `/${emp_id}`;
+    return this.http.get<Emprendimiento>(url);
+     
   }
 }

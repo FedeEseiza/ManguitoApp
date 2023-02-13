@@ -9,8 +9,8 @@
             <a class="nav-link active" aria-current="page" routerLink="home">ManguitoApp</a>
           </li>
         </ul>
-        <ul class="navbar-nav" *ngIf="authService.existeToken(); else elseBlock">
-          <li class="nav-item">
+        <ul class="navbar-nav" *ngIf="authService.existeToken() ; else elseBlock">
+          <li class="nav-item" *ngIf="emprendimiento == null">
             <a class="nav-link" routerLink="nuevo-emprendimiento">Publicar Emprendimiento</a>
           </li>
           <li class="nav-item" *ngIf="authService.obtenerRol() == 'admin' ">

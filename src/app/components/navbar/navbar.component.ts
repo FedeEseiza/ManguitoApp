@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
+import { Emprendimiento } from 'src/app/models/emprendimiento/emprendimiento';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  emprendimiento = window.localStorage.getItem("emp");
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
