@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { Emprendimiento } from 'src/app/models/emprendimiento/emprendimiento';
 import { AuthService } from 'src/app/services/auth.service';
 import { EmprendimientoService } from 'src/app/services/emprendimiento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todos-emprendimientos',
@@ -11,8 +12,9 @@ import { EmprendimientoService } from 'src/app/services/emprendimiento.service';
 })
 export class TodosEmprendimientosComponent implements OnInit {
   public listEmprendimeintos: Array<Emprendimiento> = [];
+  public emprendimientoActual: any;
 
-  constructor(public authService:AuthService, private empService:EmprendimientoService){}
+  constructor(public authService:AuthService, private empService:EmprendimientoService, private router: Router){}
 
   ngOnInit():void{
     this.obtenerEmprendimientos()
@@ -36,5 +38,9 @@ export class TodosEmprendimientosComponent implements OnInit {
       }
     });
     return aux;
+  }
+
+  setearEmpActual(emp: Emprendimiento){
+    this.emprendimientoActual = this.empService.getEmprendimiento(emp.id.toString());
   }
 }

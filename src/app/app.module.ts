@@ -15,6 +15,7 @@ import { TodosEmprendimientosComponent } from './components/emprendimiento/todos
 import { NuevoEmprendimientoComponent } from './components/emprendimiento/nuevo-emprendimiento/nuevo-emprendimiento/nuevo-emprendimiento.component';
 import { PerfilUsuarioComponent } from './components/perfil/perfil-usuario/perfil-usuario.component';
 import { AdministrarCategoriasComponent } from './components/admin/administrar-categorias/administrar-categorias.component';
+import { VerEmprendimientoComponent } from './components/emprendimiento/ver-emprendimiento/ver-emprendimiento.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AdministrarCategoriasComponent } from './components/admin/administrar-c
     NuevoEmprendimientoComponent,
     PerfilUsuarioComponent,
     AdministrarCategoriasComponent,
+    VerEmprendimientoComponent,
   ],
   imports: [
     BrowserModule,

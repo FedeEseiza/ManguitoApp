@@ -22,5 +22,8 @@ export class EmprendimientoService {
     return this.http.post(url, emp)
   }
 
-
+  public getEmprendimiento(id: string){
+    let url = environment.apiJava + 'emprendimiento' + `${id}`;
+    return this.http.get<Emprendimiento>(url)
+  }
 }

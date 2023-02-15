@@ -10,9 +10,12 @@
           </li>
         </ul>
         <ul class="navbar-nav" *ngIf="authService.existeToken() ; else elseBlock">
-          <li class="nav-item" *ngIf="emprendimiento == null">
+          <li class="nav-item" *ngIf="emprendimiento == null ; else elseBlock">
             <a class="nav-link" routerLink="nuevo-emprendimiento">Publicar Emprendimiento</a>
           </li>
+          <ng-template #elseBlock>
+            <!-- <a class="nav-link" routerLink="#">Editar Emprendimiento</a> -->
+          </ng-template>
           <li class="nav-item" *ngIf="authService.obtenerRol() == 'admin' ">
             <a class="nav-link" routerLink="administrar-categorias">Administrar categorias</a>    
           </li>
