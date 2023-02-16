@@ -83,6 +83,31 @@ export class AdministrarCategoriasComponent {
     
   }
 
+  confirmTestDelete(datos: any){
+    Swal.fire({
+      title: '¿Está seguro que desea eliminar esta categoria?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: false
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(datos)
+        this.catService.eliminarCategoria(datos.id).subscribe(() => {
+          Swal.fire(
+            '¡Listo!',
+            'Tu categoria ha sido eliminada.',
+            'success'
+          )
+          this.router.navigate(["administrar-categorias"]);
+          this.obtenerCategorias()
+        });
+      }
+    })
+    
+  }
+
 
   onSubmit() {
     var datos = this.categoria.value
@@ -98,6 +123,15 @@ export class AdministrarCategoriasComponent {
     datos["id"] = this.actual.id
     this.confirmTestEdit(datos)
     console.log(datos)
+  }
+
+  onSubmitDelete(){
+    var datos = this.categoria.value
+    datos["id"] = this.actual.id
+    
+    this.confirmTestDelete(datos)
+    console.log(datos)
+
   }
 
   setearActual(item:Categoria){

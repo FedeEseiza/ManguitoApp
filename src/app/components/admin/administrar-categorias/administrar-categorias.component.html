@@ -12,7 +12,7 @@
       <td>{{item.nombre}}</td>
       <td>
         <button class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#exampleModal-2" (click)="setearActual(item)">Editar</button>
-        <button class="btn btn-danger m-2">Eliminar</button>
+        <button class="btn btn-danger m-2" data-bs-toggle="modal" data-bs-target="#exampleModal-3" (click)="setearActual(item)">Eliminar</button>
       </td>
     </tr>
   </tbody>
@@ -70,6 +70,33 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn btn-primary" id="botonEditarCategoria">Guardar categoria</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal eliminar categoria -->
+<div class="modal fade" id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel-3">Eliminar categoria</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form ngNativeValidate (ngSubmit)="onSubmitDelete()" [formGroup]="categoria">
+        <div class="modal-body">
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Nombre de la categoria</label>
+                <input formControlName="nombre" type="text" id="form6Example3" class="form-control" placeholder=""/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" id="botonEliminarCategoria">Eliminar categoria</button>
         </div>
       </form>
     </div>

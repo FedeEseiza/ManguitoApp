@@ -28,4 +28,9 @@ export class CategoriaService{
         let url = environment.apiJava + "categoria" + `/${cat.id}`;
         return this.http.put(url,cat);
     }
+
+    public eliminarCategoria(idCategoria: String):Observable<any>{
+        let url = environment.apiJava + "categoria" + `/${idCategoria}`;
+        return this.http.delete(url)
+    }
 }

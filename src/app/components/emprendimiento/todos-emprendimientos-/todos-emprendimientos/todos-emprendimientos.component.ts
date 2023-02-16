@@ -43,4 +43,8 @@ export class TodosEmprendimientosComponent implements OnInit {
   setearEmpActual(emp: Emprendimiento){
     this.emprendimientoActual = this.empService.getEmprendimiento(emp.id.toString());
   }
+
+  verEmprendimiento(emp: Emprendimiento){
+    this.router.navigate(["ver-emprendimiento",emp.id.toString()])
+  }
 }

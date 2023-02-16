@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'nuevo-emprendimiento', component: NuevoEmprendimientoComponent},
   {path: 'perfil', component: PerfilUsuarioComponent},
   {path: 'administrar-categorias', component: AdministrarCategoriasComponent},
-  {path: 'ver-emprendimiento', component:VerEmprendimientoComponent},
+  {path: 'ver-emprendimiento/:id', component:VerEmprendimientoComponent},
   {path: '', component: HomeComponent},
 ];
 
