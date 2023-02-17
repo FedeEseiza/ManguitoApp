@@ -16,7 +16,7 @@ export class AdministrarCategoriasComponent {
   public listCategorias: Array<Categoria> = [];
   categoria: any;
   id= window.location.pathname.split("/").pop();
-  actual : Categoria = {id: 9999999, nombre: "Example"} ;
+  actual : Categoria = {id: 9999999, nombre: ""} ;
 
   constructor(public authService: AuthService, private catService: CategoriaService, private router: Router) { }
 

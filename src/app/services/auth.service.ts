@@ -31,11 +31,10 @@ export class AuthService {
         window.localStorage.setItem("email", data.email);
         window.localStorage.setItem("token", data.token);
         window.localStorage.setItem("rol",data.rol);
-        this.aux = this.obtenerEmprendimientoById(data.user_id).subscribe(res =>{});
-        console.log("ACAAAAAAAAAAA " +this.aux);
+ //       this.aux = this.obtenerEmprendimientoById(data.user_id).subscribe(res =>{});
+        console.log("ACAAAAAAAAAAA ");
         console.log(data);
-        // this.obtenerEmprendimientoById(data.user_id).subscribe(res => {window.localStorage.setItem("emp",res)});
-        console.log("En Auth service " + window.localStorage.getItem("emp"))
+        this.obtenerEmprendimientoById(data.user_id).subscribe(res => localStorage.setItem("emp",JSON.stringify(res)));
         this.router.navigate(["home"])
       },
       error => {
@@ -47,6 +46,7 @@ export class AuthService {
 
   public logout(){
     window.localStorage.clear()
+    localStorage.clear()
     this.router.navigate([""])
   }
 
@@ -71,7 +71,9 @@ export class AuthService {
   }
 
   public obtenerEmprendimientoById(emp_id:string){
-    let url = environment.apiJava + 'emprendimiento' + `/${emp_id}`;
+    console.log("id ");
+    console.log(emp_id);
+    let url = environment.apiJava + 'emprendimiento/usuario' + `/${emp_id}`;
     return this.http.get<Emprendimiento>(url);
      
   }

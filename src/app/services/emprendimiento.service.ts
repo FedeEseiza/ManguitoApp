@@ -23,7 +23,7 @@ export class EmprendimientoService {
   }
 
   public getEmprendimiento(id: string){
-    let url = environment.apiJava + 'emprendimiento' + `${id}`;
+    let url = environment.apiJava + `emprendimiento/${id}`;
     return this.http.get<Emprendimiento>(url)
   }
 }

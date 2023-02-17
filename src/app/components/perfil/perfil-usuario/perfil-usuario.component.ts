@@ -50,7 +50,7 @@ export class PerfilUsuarioComponent implements OnInit{
             'Tu usuario ha sido editado.',
             'success'
           )
-          this.router.navigate(["Home"]);
+          this.router.navigate(["home"]);
         });
       }
     })

@@ -13,7 +13,8 @@ export class TokenizerService implements HttpInterceptor {
     console.log(`TokenInterceptor - ${req.url}`);
     let authReq: HttpRequest<any> = req.clone({
       setHeaders:{
-        Authorization : `Bearer ${this.authService.obtenerToken()}`
+        Authorization : `Bearer ${this.authService.obtenerToken()}`,
+        
       }
     });
     return next.handle(authReq);

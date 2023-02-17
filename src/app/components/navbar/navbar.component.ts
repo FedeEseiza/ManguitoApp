@@ -10,7 +10,7 @@ import { Emprendimiento } from 'src/app/models/emprendimiento/emprendimiento';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  emprendimiento = window.localStorage.getItem("emp");
+  emprendimiento = JSON.parse(localStorage.getItem("emp") || '{}');
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
