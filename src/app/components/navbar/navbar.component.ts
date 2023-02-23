@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Emprendimiento } from 'src/app/models/emprendimiento/emprendimiento';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +11,8 @@ import { Emprendimiento } from 'src/app/models/emprendimiento/emprendimiento';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  emprendimiento = JSON.parse(localStorage.getItem("emp") || '{}');
-  constructor(public authService: AuthService) { }
+  emprendimiento =  JSON.parse(localStorage.getItem("emp") || '{}');
+  constructor(public authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -43,5 +44,9 @@ export class NavbarComponent implements OnInit {
         this.authService.logout()
       }
     })  }
+
+    editarEmprendimeinto(emp:Emprendimiento){
+      this.router.navigate(["editar-emprendimiento",emp.id.toString()])
+    }
 
 }

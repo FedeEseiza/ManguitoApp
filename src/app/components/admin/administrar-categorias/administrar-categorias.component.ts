@@ -53,6 +53,10 @@ export class AdministrarCategoriasComponent {
           this.obtenerCategorias();
           this.router.navigate(["administrar-categorias"]);
 
+        },error => {
+          if ( error.status == 409){
+            alert('La categoria ya existe')
+          }
         });
       }
     })
@@ -79,7 +83,11 @@ export class AdministrarCategoriasComponent {
           this.obtenerCategorias()
         });
       }
-    })
+    },error => {
+      if ( error.status == 409){
+        alert('La categoria ya existe')
+      }
+    });
     
   }
 
@@ -136,5 +144,10 @@ export class AdministrarCategoriasComponent {
 
   setearActual(item:Categoria){
     this.actual = item;
+  }
+
+  eliminarCategoria(item: Categoria){
+    this.setearActual(item);
+    this.onSubmitDelete();
   }
 }

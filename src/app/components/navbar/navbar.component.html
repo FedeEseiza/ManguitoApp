@@ -14,7 +14,9 @@
             <a class="nav-link" routerLink="nuevo-emprendimiento">Publicar Emprendimiento</a>
           </li>
           <ng-template #elseBlock>
-            <a class="nav-link" routerLink="#">Editar Emprendimiento</a>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="editar-emprendimiento/{{emprendimiento.id}}">Editar Emprendimiento</a>
+            </li>
           </ng-template>
           <li class="nav-item" *ngIf="authService.obtenerRol() == 'admin' ">
             <a class="nav-link" routerLink="administrar-categorias">Administrar categorias</a>    

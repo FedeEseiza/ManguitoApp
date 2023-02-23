@@ -1,3 +1,20 @@
-<h1>"Emprendimiento: "{{emprendimiento.nombre}}</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card text-center" style="width: 20rem;">
+                <img src="../../../../../assets/img/ong_img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Emprendimeinto: {{ emprendimiento.nombre}}</p>
+                  <p class="card-text">Precio por manguito: ${{emprendimiento.precioPorManguito}}</p>  
+                  <p class="card-text">Twitter: {{emprendimiento.twitter}}</p>  
+                  <p class="card-text">Facebook: {{emprendimiento.facebook}}</p>  
+                  <p class="card-text">Instagram: {{emprendimiento.instagram}}</p>
+                  <p class="card-text">Descripcion: {{emprendimiento.descripcion}}</p>
+                  <button class="btn" (click)="back()">Volver</button>          
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
 
 

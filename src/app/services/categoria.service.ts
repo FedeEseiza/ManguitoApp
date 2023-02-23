@@ -14,7 +14,7 @@ export class CategoriaService{
     endpoint: string = 'categoria/'
     constructor(private http: HttpClient, private authService:AuthService) { }
 
-    public getCategorias(){
+    public getCategorias():Observable<Array<Categoria>>{
         let url = environment.apiJava + this.endpoint + 'categorias';
         return this.http.get<Array<Categoria>>(url);
     }

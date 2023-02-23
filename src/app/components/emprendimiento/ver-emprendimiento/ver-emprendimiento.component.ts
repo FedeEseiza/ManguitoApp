@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class VerEmprendimientoComponent {
   emprendimiento: any
   emprendimientoId: any ;
-  constructor(private empService:EmprendimientoService, private route: ActivatedRoute){}
+  constructor(private empService:EmprendimientoService, private route: ActivatedRoute, private router: Router){}
 
   ngOnInit():void{
     this.route.paramMap.subscribe(params => { 
@@ -25,6 +25,10 @@ export class VerEmprendimientoComponent {
     
     });
     
+  }
+
+  back(): void {
+    this.router.navigate(["home"]);
   }
 
 }

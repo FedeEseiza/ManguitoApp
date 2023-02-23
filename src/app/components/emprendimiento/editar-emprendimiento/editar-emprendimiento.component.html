@@ -1,0 +1,90 @@
+<section>
+    <div class="container-fluid ">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center shadow-lg p-5 my-5 bg-white rounded">
+          <h3 class="">Editar Emprendimiento</h3>
+          <!-- <form class="form-card "  ngNativeValidate (ngSubmit)="onSubmit()" [formGroup]=""> -->
+          <form ngNativeValidate (ngSubmit)="onEdit()" [formGroup]="emprendimiento">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Nombre del emprendimiento <span class="text-danger"> *(Campo obligatorio)</span></label>
+                  <input required formControlName="nombre" type="text" id="form6Example1" class="form-control" [(ngModel)]='emprendimientoActual.nombre'/>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example2">Categorias</label>
+                  <select required  class="form-select" aria-label="Default select example">
+                    <option [value]="item" *ngFor=" let item of categorias">{{item.nombre}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label px-3 descrip">Descripción<span class="text-danger"> *(Campo obligatorio)</span></label>
+                <textarea required formControlName="descripcion" maxlength="255"
+                  placeholder="Ingrese una descripcion de su emprendimiento" required [(ngModel)]='emprendimientoActual.descripcion'></textarea>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <label for="">Mostrar manguitos recibidos <span class="text-danger"> *(Campo obligatorio)</span></label>
+              <div class="inline-block">
+                <label class="" for=""> Si
+                  <input type="radio" name="mostrarManguitosRecibidos" [value]="true" formControlName="mostrarManguitosRecibidos"checked>
+                </label>
+                <label for=""> No
+                  <input type="radio" name="mostrarManguitosRecibidos" [value]="false" formControlName="mostrarManguitosRecibidos">
+                </label>
+              </div>  
+            </div>
+            <div class="row mb-4">
+              <label for="">Top donadores <span class="text-danger"> *(Campo obligatorio)</span></label>
+              <div class="inline-block">
+                <label class="" for=""> Si
+                  <input type="radio" name="mostrarTopDonadores" [value]="true" formControlName="mostrarTopDonadores" checked>
+                </label>
+                <label for=""> No
+                  <input type="radio" name="mostrarTopDonadores" [value]="false" formControlName="mostrarTopDonadores">
+                </label>
+              </div>      
+            </div>
+            <div class="row mb-4">
+              <div class="form-outline mb-4">
+                <label class="form-label" for="">Precio por manguito <span class="text-danger"> *(Campo obligatorio)</span></label>
+                <input formControlName="precioPorManguito" type="text" id="precioManguito" class="form-control" [(ngModel)]='emprendimientoActual.precioPorManguito'/>     
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Twitter</label>
+                  <input formControlName="twitter" type="text" class="form-control" [(ngModel)]='emprendimientoActual.twitter'/>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example2">Instagram</label>
+                  <input formControlName="instagram" type="text" class="form-control" [(ngModel)]='emprendimientoActual.facebook'/>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example3">Facebook</label>
+                  <input formControlName="facebook" type="text" class="form-control" [(ngModel)]='emprendimientoActual.instagram'/>
+                </div>
+              </div>
+            </div>
+            <div class="botonOk">
+              <div class="form-group col-sm-6"> <button id="boton" type="submit"
+                  class="btn-block btn-primary but ">Confirmar</button> </div>
+              <div class="form-group col-sm-6"> <button id="boton" type="submit"
+                  class="btn-block btn-primary but">Cancelar</button> </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

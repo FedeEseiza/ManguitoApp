@@ -1,0 +1,26 @@
+.logo-manguito-card
+{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.card
+{
+    margin-left: 5rem !important;
+    margin-right: 5rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    transform: translateX(45rem);
+}
+
+.btn
+{
+    background-color: #3CE792 !important;
+    border-color: #3CE792 !important;
+    color: white !important;
+}
+
+.btn:hover{
+    background-color: white !important;
+    color: black !important;
+}
+

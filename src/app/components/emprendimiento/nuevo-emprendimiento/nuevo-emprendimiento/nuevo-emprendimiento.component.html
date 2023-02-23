@@ -9,29 +9,28 @@
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
-                <label class="form-label" for="form6Example1">Nombre del emprendimiento</label>
-                <input formControlName="nombre" type="text" id="form6Example1" class="form-control" />
+                <label class="form-label" for="form6Example1">Nombre del emprendimiento <span class="text-danger"> *(Campo obligatorio)</span></label>
+                <input required formControlName="nombre" type="text" id="form6Example1" class="form-control" />
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example2">Categorias</label>
-                <select required  class="form-select" aria-label="Default select example">
-                  <option>ONG</option>
-                  <option>Arte</option>
+                <select required  class="form-select" aria-label="Default select example" >
+                  <option [value]="item" *ngFor="let item of categorias">{{item.nombre}}</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="row mb-4">
             <div class="form-group col-12 flex-column d-flex">
-              <label class="form-control-label px-3 descrip">Descripción<span class="text-danger"> *</span></label>
+              <label class="form-control-label px-3 descrip">Descripción<span class="text-danger"> *(Campo obligatorio)</span></label>
               <textarea required formControlName="descripcion" maxlength="255"
                 placeholder="Ingrese una descripcion de su emprendimiento" required></textarea>
             </div>
           </div>
           <div class="row mb-4">
-            <label for="">Mostrar manguitos recibidos</label>
+            <label for="">Mostrar manguitos recibidos <span class="text-danger"> *(Campo obligatorio)</span></label>
             <div class="inline-block">
               <label class="" for=""> Si
                 <input type="radio" name="mostrarManguitosRecibidos" [value]="true" formControlName="mostrarManguitosRecibidos"checked>
@@ -42,7 +41,7 @@
             </div>  
           </div>
           <div class="row mb-4">
-            <label for="">Top donadores</label>
+            <label for="">Top donadores <span class="text-danger"> *(Campo obligatorio)</span></label>
             <div class="inline-block">
               <label class="" for=""> Si
                 <input type="radio" name="mostrarTopDonadores" [value]="true" formControlName="mostrarTopDonadores" checked>
@@ -54,7 +53,7 @@
           </div>
           <div class="row mb-4">
             <div class="form-outline mb-4">
-              <label class="form-label" for="">Precio por manguito</label>
+              <label class="form-label" for="">Precio por manguito <span class="text-danger"> *(Campo obligatorio)</span></label>
               <input formControlName="precioPorManguito" type="text" id="precioManguito" class="form-control" />     
             </div>
           </div>

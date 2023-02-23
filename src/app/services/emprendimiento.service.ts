@@ -26,4 +26,9 @@ export class EmprendimientoService {
     let url = environment.apiJava + `emprendimiento/${id}`;
     return this.http.get<Emprendimiento>(url)
   }
+
+  public editarEmprendimiento(emp:Emprendimiento, id:string): Observable<any>{
+    let url = environment.apiJava + `editar-emprendimiento/${id}`;
+    return this.http.put(url,emp)
+  }
 }

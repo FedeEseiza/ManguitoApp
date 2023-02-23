@@ -22,6 +22,8 @@ export class RegistroComponent {
       error => {
         if (error.status == 409){
           alert("El email ya existe");
+        }else if (error.status == 403){
+          alert("La contraseña no puede contener menos de 5 caracteres");
         }
       });
   }

@@ -7,6 +7,7 @@ import { NuevoEmprendimientoComponent } from './components/emprendimiento/nuevo-
 import { PerfilUsuarioComponent } from './components/perfil/perfil-usuario/perfil-usuario.component';
 import { AdministrarCategoriasComponent } from './components/admin/administrar-categorias/administrar-categorias.component';
 import { VerEmprendimientoComponent } from './components/emprendimiento/ver-emprendimiento/ver-emprendimiento.component';
+import { EditarEmprendimientoComponent } from './components/emprendimiento/editar-emprendimiento/editar-emprendimiento.component';
 
 const routes: Routes = [
   {path: 'registro', component:RegistroComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'perfil', component: PerfilUsuarioComponent},
   {path: 'administrar-categorias', component: AdministrarCategoriasComponent},
   {path: 'ver-emprendimiento/:id', component:VerEmprendimientoComponent},
+  {path: 'editar-emprendimiento/:id', component:EditarEmprendimientoComponent},
   {path: '', component: HomeComponent},
 ];
 

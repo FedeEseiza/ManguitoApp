@@ -51,6 +51,11 @@ export class PerfilUsuarioComponent implements OnInit{
             'success'
           )
           this.router.navigate(["home"]);
+        },
+        error => {
+          if (error.status == 403){
+            alert("La contraseña no puede contener menos de 5 caracteres");
+          }
         });
       }
     })
