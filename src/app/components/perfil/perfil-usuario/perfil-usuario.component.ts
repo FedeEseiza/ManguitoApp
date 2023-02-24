@@ -56,6 +56,9 @@ export class PerfilUsuarioComponent implements OnInit{
           if (error.status == 403){
             alert("La contraseña no puede contener menos de 5 caracteres");
           }
+          if (error.status == 400){
+            alert("La contraseña no puede estar vacía");
+          }
         });
       }
     })

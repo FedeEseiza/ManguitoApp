@@ -54,6 +54,7 @@ export class EditarEmprendimientoComponent implements OnInit{
       reverseButtons: false
     }).then((result) => {
       if (result.isConfirmed) {
+        console.log("EMPRENDIEMIENTO")
         console.log(datos)
         this.emprendimientoService.editarEmprendimiento(datos,this.emprendimientoId).subscribe(() =>{
           Swal.fire(
@@ -68,9 +69,9 @@ export class EditarEmprendimientoComponent implements OnInit{
   }
   onEdit(){
     var datos= this.emprendimiento.value
-    datos["usuario"] = {
-      id: this.authService.obtenerIdUsuario()
-    }
+    // datos["usuario"] = {
+    //   id: this.authService.obtenerIdUsuario()
+    // }
     this.confirmTestEdit(datos)
     console.log(datos)
     }

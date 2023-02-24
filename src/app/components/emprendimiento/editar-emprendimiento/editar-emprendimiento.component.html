@@ -54,7 +54,7 @@
             <div class="row mb-4">
               <div class="form-outline mb-4">
                 <label class="form-label" for="">Precio por manguito <span class="text-danger"> *(Campo obligatorio)</span></label>
-                <input formControlName="precioPorManguito" type="text" id="precioManguito" class="form-control" [(ngModel)]='emprendimientoActual.precioPorManguito'/>     
+                <input required formControlName="precioPorManguito" type="text" id="precioManguito" class="form-control" [(ngModel)]='emprendimientoActual.precioPorManguito'/>     
               </div>
             </div>
             <div class="row mb-4">
@@ -80,8 +80,7 @@
             <div class="botonOk">
               <div class="form-group col-sm-6"> <button id="boton" type="submit"
                   class="btn-block btn-primary but ">Confirmar</button> </div>
-              <div class="form-group col-sm-6"> <button id="boton" type="submit"
-                  class="btn-block btn-primary but">Cancelar</button> </div>
+              
             </div>
           </form>
         </div>
